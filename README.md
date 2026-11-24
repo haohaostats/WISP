@@ -30,7 +30,43 @@ install.packages("WISP_0.1.0.tar.gz", repos = NULL, type = "source")
 library(WISP)
 ```
 
-Repository: https://github.com/haohaostats/WISP. This package is not currently distributed through CRAN.
+## Results at a glance
+
+### Breast cosmetic deterioration
+
+**94 women · 15–42 months · RT minus RT + chemotherapy**
+
+![Breast cosmetic deterioration: group survival curves and window-specific contrasts](docs/figures/breast-cosmesis.svg)
+
+The midpoint WISP estimate was **7.53 additional months** without moderate or severe breast retraction in the RT group within the primary window.
+
+| Analysis | WMST difference (months) | 95% CI |
+|---|---:|---:|
+| **WISP: midpoint** | **7.53** | **3.06 to 12.00** |
+| Documented date | 5.62 | 1.24 to 9.99 |
+| Turnbull comparison | 8.31 | 3.75 to 12.87 |
+
+Pseudo-observations were constructed within treatment groups. WISP intervals use HC0 standard errors; the Turnbull comparison uses bootstrap standard errors. The figure also shows the alternative windows. These are observed group contrasts in a retrospective study.
+
+[Download vector PDF](docs/figures/breast-cosmesis.pdf)
+
+### Dental caries development
+
+**369 children · ages 8–12 years · permanent tooth 16**
+
+![Dental caries: brushing-group survival curves and adjusted regression coefficients](docs/figures/dental-caries.svg)
+
+After covariate adjustment, daily brushing was associated with **0.630 additional caries-free years**, approximately **7.6 months**, within the analysis window.
+
+| Daily-brushing analysis | WMST difference (years) | 95% CI | SE |
+|---|---:|---:|---:|
+| Midpoint, unadjusted | 0.665 | 0.170 to 1.159 | 0.252 |
+| **Midpoint, adjusted** | **0.630** | **0.174 to 1.087** | **0.233** |
+| Documented date, adjusted | 0.525 | 0.106 to 0.943 | 0.214 |
+
+The adjusted model includes baseline dmft, occlusal plaque, sealant status and sex. Both models use the same complete-case sample. Curves are descriptive and unadjusted; forest-plot coefficients are adjusted associations with 95% HC0 intervals.
+
+[Download vector PDF](docs/figures/dental-caries.pdf)
 
 ## A first analysis
 
@@ -92,25 +128,6 @@ source(system.file("examples", "tandmob.R", package = "WISP"))
 The bcos example compares radiotherapy alone minus radiotherapy plus chemotherapy using group-stratified pseudo-observations over four windows. The dental example compares unadjusted and adjusted brushing associations on the same 369 complete cases, includes documented-date sensitivity analysis, and examines three age windows. For left-censored dental events it uses the emergence lower endpoint where observed and a working five-year lower bound otherwise, matching the manuscript analysis. This is an explicit case-specific choice, not a package default. These scripts reproduce WISP analyses, not the Turnbull comparator or a new bootstrap run. All results describe associations; they are not automatic causal estimates.
 
 Data provenance and original study references are available through `help("breastCancer", package = "icensBKL")` and `help("tandmob", package = "icensBKL")`.
-
-## Targets and scope
-
-With fixed examination intervals, inference targets the reconstructed event-time projection, which can differ from the latent-time WMST projection. Midpoint reconstruction is not an automatic correction for interval-censoring bias. The pooled WISP estimator requires suitable censoring assumptions; adding covariates to the regression does not on its own correct dependent censoring. The IPCW extension corrects observation selection under its specified model and positivity assumptions and still targets the reconstructed response. It is not an implementation for arbitrary irregular assessment schedules.
-
-No manuscript files, participant data, stored simulation results, publisher templates or comparison-method implementations are distributed with this method package. Examples use artificial data. Publication metadata will be added when available; `citation("WISP")` currently cites the software without claiming a published paper or DOI.
-
-## Development
-
-Documentation is provided as R help pages and this README. No PDF manual is required.
-
-```sh
-R CMD build WISP
-R CMD check --no-manual WISP_0.1.0.tar.gz
-```
-
-Tests cover complete-data identities, tied-event influence derivatives, window additivity, regression identities, input validation, IPCW influence-based covariance, and numerical agreement with frozen outputs from the research implementation. GitHub Actions runs package checks on Linux, Windows and macOS after publication. R code contains no explanatory comments; API documentation is maintained in `man/`.
-
-Package structure follows [Writing R Extensions](https://cran.r-project.org/doc/manuals/r-release/R-exts.html).
 
 ## License
 
