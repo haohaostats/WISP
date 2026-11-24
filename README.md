@@ -36,23 +36,18 @@ library(WISP)
 
 **94 women · 15–42 months · RT minus RT + chemotherapy**
 
-![Breast cosmetic deterioration: group survival curves and window-specific contrasts](docs/figures/breast-cosmesis.svg)
-
 The midpoint WISP estimate was **7.53 additional months** without moderate or severe breast retraction in the RT group within the primary window.
 
 | Analysis | WMST difference (months) | 95% CI |
 |---|---:|---:|
 | **WISP: midpoint** | **7.53** | **3.06 to 12.00** |
 | Documented date | 5.62 | 1.24 to 9.99 |
-| Turnbull comparison | 8.31 | 3.75 to 12.87 |
 
-Pseudo-observations were constructed within treatment groups. WISP intervals use HC0 standard errors; the Turnbull comparison uses bootstrap standard errors. The figure also shows the alternative windows. These are observed group contrasts in a retrospective study.
+Pseudo-observations were constructed within treatment groups. Intervals use HC0 standard errors. These are observed group contrasts in a retrospective study.
 
 ### Dental caries development
 
 **369 children · ages 8–12 years · permanent tooth 16**
-
-![Dental caries: brushing-group survival curves and adjusted regression coefficients](docs/figures/dental-caries.svg)
 
 After covariate adjustment, daily brushing was associated with **0.630 additional caries-free years**, approximately **7.6 months**, within the analysis window.
 
@@ -62,7 +57,7 @@ After covariate adjustment, daily brushing was associated with **0.630 additiona
 | **Midpoint, adjusted** | **0.630** | **0.174 to 1.087** | **0.233** |
 | Documented date, adjusted | 0.525 | 0.106 to 0.943 | 0.214 |
 
-The adjusted model includes baseline dmft, occlusal plaque, sealant status and sex. Both models use the same complete-case sample. Curves are descriptive and unadjusted; forest-plot coefficients are adjusted associations with 95% HC0 intervals.
+The adjusted model includes baseline dmft, occlusal plaque, sealant status and sex. Both models use the same complete-case sample. The reported coefficients are associations with 95% HC0 intervals.
 
 ## A first analysis
 
