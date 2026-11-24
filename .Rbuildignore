@@ -1,0 +1,8 @@
+^\.git$
+^\.github$
+^\.gitignore$
+^LICENSE\.md$
+^tools$
+^README\.md$
+^NEWS\.md$
+^dist$

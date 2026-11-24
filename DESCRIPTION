@@ -1,0 +1,20 @@
+Package: WISP
+Type: Package
+Title: Window Mean Survival Time Regression for Interval-Censored Data
+Version: 0.1.0
+Authors@R: c(
+    person("Hao", "Chen", email = "hche2036@uni.sydney.edu.au", role = c("aut", "cre")),
+    person("Clara", "Grazian", role = "aut"))
+Description: Covariate-adjusted window mean survival time regression for
+    interval-censored outcomes using midpoint reconstruction, Kaplan-Meier
+    estimation and infinitesimal jackknife pseudo-observations. Includes
+    right-endpoint sensitivity analysis and a complete-response inverse
+    probability weighting extension for baseline-dependent monotone dropout
+    on a common assessment grid, with stacked sandwich inference.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends: R (>= 4.1.0)
+Imports: survival, stats
+Suggests: icensBKL
+URL: https://github.com/haohaostats/WISP
+BugReports: https://github.com/haohaostats/WISP/issues
