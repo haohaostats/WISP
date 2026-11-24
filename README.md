@@ -48,8 +48,6 @@ The midpoint WISP estimate was **7.53 additional months** without moderate or se
 
 Pseudo-observations were constructed within treatment groups. WISP intervals use HC0 standard errors; the Turnbull comparison uses bootstrap standard errors. The figure also shows the alternative windows. These are observed group contrasts in a retrospective study.
 
-[Download vector PDF](docs/figures/breast-cosmesis.pdf)
-
 ### Dental caries development
 
 **369 children · ages 8–12 years · permanent tooth 16**
@@ -65,8 +63,6 @@ After covariate adjustment, daily brushing was associated with **0.630 additiona
 | Documented date, adjusted | 0.525 | 0.106 to 0.943 | 0.214 |
 
 The adjusted model includes baseline dmft, occlusal plaque, sealant status and sex. Both models use the same complete-case sample. Curves are descriptive and unadjusted; forest-plot coefficients are adjusted associations with 95% HC0 intervals.
-
-[Download vector PDF](docs/figures/dental-caries.pdf)
 
 ## A first analysis
 
